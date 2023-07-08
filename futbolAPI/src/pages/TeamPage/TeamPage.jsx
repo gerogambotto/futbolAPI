@@ -42,26 +42,30 @@ export function TeamPage() {
   }
 
   return (
-    <div>
-      <h2>Coaches del equipo: {teamName}</h2>
-      <div className="d-flex">
-        {coaches.map((coach) => (
-          <a key={coach.id}>{coach.name}</a>
-        ))}
+    <section className="home-section">
+      <div className=" data-container">
+        <h2>Coaches del equipo: {teamName}</h2>
+        <div className="coach-names">
+          {coaches.map((coach) => (
+            <h5 key={coach.id}>{coach.name} , </h5>
+          ))}
+        </div>
+        <div className="data-stadium">
+          <h3>
+            Estadio: {teamsData.find((item) => item.team.id == id)?.venue.name}
+          </h3>
+          <h3>
+            Ciudad: {teamsData.find((item) => item.team.id == id)?.venue.city}
+          </h3>
+          <h3>
+            Capacidad:{" "}
+            {teamsData.find((item) => item.team.id == id)?.venue.capacity}
+          </h3>
+          <img
+            src={teamsData.find((item) => item.team.id == id)?.venue.image}
+          ></img>
+        </div>
       </div>
-      <h3>
-        Estadio: {teamsData.find((item) => item.team.id == id)?.venue.name}
-      </h3>
-      <h3>
-        Ciudad: {teamsData.find((item) => item.team.id == id)?.venue.city}
-      </h3>
-      <h3>
-        Capacidad:{" "}
-        {teamsData.find((item) => item.team.id == id)?.venue.capacity}
-      </h3>
-      <img
-        src={teamsData.find((item) => item.team.id == id)?.venue.image}
-      ></img>
-    </div>
+    </section>
   );
 }
