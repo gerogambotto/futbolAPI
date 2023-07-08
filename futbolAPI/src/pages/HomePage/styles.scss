@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.home-section{
+    background: $backgroundColor;
+    width: 100%;
+    height: 100%;
+    .teamstable-conteiner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 1200px;
+      
+    }
+      .teamstable{
+            background: wheat;
+            display: grid;
+            padding: 10px;
+            width: 500px;
+            border: 1px solid black;
+            
+        }
+        .team-name{
+            padding:10px;
+            border: 1px solid black;
+            cursor: pointer;
+            
+        }
+} 
